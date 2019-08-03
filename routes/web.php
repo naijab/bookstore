@@ -12,5 +12,10 @@
  */
 
 Route::get('/book', 'BookController@index')->name('book.home');
+
 Route::get('/book/new', 'BookController@addForm')->name('book.form.add');
+Route::get('/book/{id}', 'BookController@editForm')->name('book.form.edit');
+
 Route::post('/book/new', 'BookController@addBook')->name('book.add');
+Route::get('/book/update/{id}/{action}', 'BookController@updateBook')->name('book.update');
+Route::post('/book/update/{id}', 'BookController@updateBookById')->name('book.update.byid');

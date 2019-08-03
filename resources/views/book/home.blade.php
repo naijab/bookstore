@@ -5,6 +5,11 @@
 @section('content')
 <div class="container mt-5">
     <a href="{{route('book.form.add')}}" class="btn btn-success mb-5">Add New Book</a>
+    <a href="{{route('logout')}}" class="btn btn-danger mb-5">Logout</a>
+
+
+    Hello: {{$user->name}}
+    <img src="{{$user->avatar}}" class="img-fluid rounded-circle" width="40" />
     <table class="table">
         <thead>
             <tr>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\BookStore;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Validator;
 
 class BookController extends Controller
@@ -13,6 +14,7 @@ class BookController extends Controller
     {
         $books = \App\BookStore::all();
         $data['books'] = $books;
+        $data['user'] = Auth::user();
         return view('book.home', $data);
     }
 
@@ -87,7 +89,7 @@ class BookController extends Controller
         $book->fill($validator->validate());
         $book->save();
 
-        return redirect()->back();
+        return redirect()->route('book.home');
     }
 
 }

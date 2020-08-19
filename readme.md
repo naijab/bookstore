@@ -1,3 +1,3 @@
 # Book Store
 
-## with laravel
+> book store playground with php laravel
